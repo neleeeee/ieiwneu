@@ -1,0 +1,146 @@
+.kopf {
+    position: absolute;
+    top: 10vw;
+    left: 10vw;
+
+    height: 60vw;
+    width: 50vw;
+
+    background: #94BBE9;
+
+    border-radius: 75% 79% 90% 81% / 75% 79% 90% 81%;
+}
+
+
+
+
+
+
+
+.star {
+  width: 130px;  
+  aspect-ratio: 1;
+  position: absolute;
+  background: #F8CA00;
+  clip-path: polygon(50% 0,
+    calc(50%*(1 + sin(.4turn))) calc(50%*(1 - cos(.4turn))),
+    calc(50%*(1 - sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+    calc(50%*(1 + sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+    calc(50%*(1 - sin(.4turn))) calc(50%*(1 - cos(.4turn))) 
+   ); 
+  
+}
+
+.star.rechts {
+  top: 17vw;
+  right: 5vw;
+}
+
+.star.links {
+  top: 17vw;
+  left: 5vw;
+}
+
+
+
+.arc {
+    position: absolute;
+  --b: 2vw; /* the boder thickness */
+  --a: 240deg; /* control the progression */
+  
+  width: 8vw;
+  aspect-ratio: 1;
+  padding: var(--b);
+  border-radius: 50%;
+  background: #c0d860;
+  --_g:/var(--b) var(--b) no-repeat
+    radial-gradient(50% 50%,#000 97%,#0000);
+  mask: top var(--_g),
+    calc(50% + 50%*sin(var(--a))) 
+    calc(50% - 50%*cos(var(--a))) var(--_g),
+    linear-gradient(#0000 0 0) content-box intersect,
+    conic-gradient(#000 var(--a),#0000 0);
+}
+
+
+
+.arc.links {
+    top: 34vw;
+    left: -7vw;
+    
+}
+
+.arc.rechts {
+    top: 34vw;
+    right: -6vw;
+}
+
+
+
+.brille {
+    position: absolute;
+    
+
+    height: 20vw;
+    width: 20vw;
+
+    background: rgb(254, 121, 212);
+    clip-path: polygon(16% 20%, 17% 74%, 23% 75%, 23% 27%, 75% 27%, 76% 67%, 21% 66%, 23% 75%, 83% 75%, 82% 19%);
+    }
+
+    .brille.rechts {
+         top: 18vw;
+    left: 25vw;
+    
+    }
+
+    .brille.links {
+         top: 18vw;
+    left:5vw;
+
+    }
+
+
+    /* HTML: <div class="wavy-line"></div> */
+.wavy-line {
+    position: absolute;
+  --s: 40px; /* size of the wave */
+  --b: 30px; /* thickness of the line */
+  --m: 0.4; /* curvature of the wave [0 2] */
+  
+  background: #635126;
+  --R: calc(var(--s)*sqrt(var(--m)*var(--m) + 1) + var(--b)/2);
+  width: calc(2*var(--R));
+  min-height: 290px;
+  --_g: #0000 calc(99% - var(--b)), #000 calc(101% - var(--b)) 99%, #0000 101%;
+  mask:
+    radial-gradient(var(--R) at top 50% right calc(-1*var(--m)*var(--s)), var(--_g)) 
+     calc(50% - var(--s)/2 - var(--b)/2) calc(50% - 2*var(--s))/calc(var(--s) + var(--b)) calc(4*var(--s)) repeat-y,
+    radial-gradient(var(--R) at top 50% left calc(-1*var(--m)*var(--s)),var(--_g)) 
+     calc(50% + var(--s)/2 + var(--b)/2) 50%/calc(var(--s) + var(--b)) calc(4*var(--s)) repeat-y;
+}
+
+.wavy-line.right {
+  top: 10vw ;
+  left: 40vw;
+}
+
+.wavy-line.left {
+  top: 10vw;
+  right: 40vw;
+}
+
+.mund {
+  position: absolute;
+  bottom: 8vw;
+  left: 18vw;
+  height: 5vw;
+  width: 14vw;
+  
+  background: rgb(255, 40, 40);
+  border-radius: 10% 10% 50% 50%; 
+  
+  transition: 0.3s; /* 0.3s Übergang */
+}
+
+
